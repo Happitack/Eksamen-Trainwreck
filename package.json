@@ -2,9 +2,9 @@
   "name": "Eksamen-Trainwreck",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon ./backend/index.js --exec babel-node -e js"
+    "start": "nodemon ./backend/server.js --exec babel-node -e js"
   },
   "keywords": [],
   "author": "",
