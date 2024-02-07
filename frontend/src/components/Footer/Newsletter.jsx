@@ -5,7 +5,6 @@ import './Newsletter.css';
 
 function Newsletter() {
   const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
@@ -14,15 +13,22 @@ function Newsletter() {
 
     try {
       const res = await axios.post('/api/newsletter/subscribe', { email });
-      setMessage(res.data.message);
-    } catch (err) {
-      if (err.response.status === 400) {
-        setMessage(err.response.data.errors[0].msg);
-      } else {
-        setMessage('An error occurred. Please try again.');
+      setSuccess(res.data.message);
+    } 
+    catch (err) {
+      if (err.response && err.response.data) {
+        if (err.response.data.errors) {
+          setError(err.response.data.errors[0].msg);
+        } 
+        else if (err.response.data.error) {
+          setError(err.response.data.error);
+        }
+      } 
+      else {
+        setError('An error occurred. Please try again.');
       }
     }
-  };
+  }
 
   return (
     <div className="app__newsletter" id="newsletter">
