@@ -4,7 +4,6 @@ const Films = require('../models/filmsModel');
 
 // @desc    Get film
 // @route   GET /api/films
-// @access  Private
 const getAllFilms = asyncHandler(async (req, res) => {
   const films = await Films.find();
 
@@ -13,7 +12,6 @@ const getAllFilms = asyncHandler(async (req, res) => {
 
 // @desc    Get film by ID
 // @route   GET /api/films/:id
-// @access  Private
 const getFilmById = asyncHandler(async (req, res) => {
   const film = await Films.findById(req.params.id);
 
@@ -26,7 +24,6 @@ const getFilmById = asyncHandler(async (req, res) => {
 
 // @desc    Create new film
 // @route   POST /api/films
-// @access  Private
 const createFilm = asyncHandler(async (req, res) => {
   if (!req.body.title || !req.body.description) {
     res.status(400).json({
@@ -44,7 +41,6 @@ const createFilm = asyncHandler(async (req, res) => {
 
 // @desc    Update film by ID
 // @route   PUT /api/films/:id
-// @access  Private
 const updateFilmById = asyncHandler(async (req, res) => {
   const film = await Films.findById(req.params.id)
 
@@ -62,7 +58,6 @@ const updateFilmById = asyncHandler(async (req, res) => {
 
 // @desc    Delete film by ID
 // @route   DELETE /api/films/:id
-// @access  Private
 const deleteFilmById = asyncHandler(async (req, res) => {
   const film = await Films.findById(req.params.id)
 

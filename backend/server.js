@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 const {errorHandler} = require('./middleware/errorHandler');
 const connectDB = require('./config/db');
-const routes = require('./routes/filmsRoutes');
+const filmsRoutes = require('./routes/filmsRoutes');
+const newsletterRoutes = require('./routes/newsletterRoutes');
 const PORT = process.env.PORT || 4000;
 const app = express(); 
 
@@ -20,7 +21,8 @@ app.use((req, res, next) => {
 });
 
 // Routing middleware
-app.use('/api/films', routes);
+app.use('/api/films', filmsRoutes);
+app.use('/api/newsletter', newsletterRoutes);
 app.use(errorHandler);
 
 app.listen(PORT, () => {
