@@ -12,6 +12,10 @@ const filmSchema = new mongoose.Schema({
     required: [true, 'Film description is required'],
     trim: true,
     maxlength: [500, 'Film description cannot be more than 500 characters']
+  },
+  releaseDate: {
+    type: Date,
+    required: [true, 'Film release date is required']
   }
 }, {
   timestamps: true
