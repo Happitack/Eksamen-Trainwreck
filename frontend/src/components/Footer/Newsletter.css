@@ -1,21 +1,30 @@
-.app__newsletter {
-  padding: 2rem 4rem;
-  border: 1px solid var(--color-white);
+.newsletter {
+  padding: 1rem 0rem;
   background: var(--color-black);
+  font-family: var(--font-base);
+  color: var(--color-white);
 }
 
-.app__newsletter-heading {
-  text-align: center;
-}
-
-.app__newsletter-input {
+.newsletter-input {
   display: flex;
   flex-direction: row;
-  margin-top: 3rem;
 }
 
-.app__newsletter-input input {
-  width: 620px;
+.newsletter-text h1 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.newsletter-text p {
+  color: var(--color-white);
+  font-family: var(--font-base);
+  margin-bottom: 2rem;
+  max-width: 40vh;
+}
+
+.newsletter-input input {
+  width: 100%;
   border: 1px solid var(--color-white);
   border-radius: 5px;
   font-size: 1rem;
@@ -27,16 +36,15 @@
   background: var(--color-black);
 }
 
-.app__newsletter_errormsg {
-  color: var(--color-red);
-  font-family: var(--font-base);
-  margin-top: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.newsletter-input input.input-error::placeholder {
+  color: red;
 }
 
-.app__newsletter_successmsg {
+.newsletter-input input::placeholder {
+  color: var(--color-white);
+}
+
+.newsletter_successmsg {
   color: var(--color-white);
   font-family: var(--font-base);
   margin-top: 2rem;
@@ -45,37 +53,37 @@
   justify-content: center;
 }
 
-.app__newsletter-input button {
+.newsletter-input button {
   width: max-content;
 }
 
 @media screen and (min-width: 2000px) {
-  .app__newsletter-input input {
+  .newsletter-input input {
       font-size: 2rem;
   }
 }
 
 @media screen and (max-width: 990px) {
-  .app__newsletter-input {
+  .newsletter-input {
       flex-direction: column;
       width: 100%;
   }
 
-  .app__newsletter-input input {
+  .newsletter-input input {
       margin: 0 0 2rem 0;
       width: 100%;
   }
 }
 
 @media screen and (max-width: 650px) {
-  .app__newsletter {
+  .newsletter {
       padding: 2rem 0;
       border: none;
   }
 }
 
 @media screen and (max-width: 300px) {
-  .app__newsletter-heading h1 {
+  .newsletter-heading h1 {
       font-size: 32px;
       line-height: 50px;
   }

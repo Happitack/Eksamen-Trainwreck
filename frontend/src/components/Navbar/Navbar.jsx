@@ -45,10 +45,11 @@ const Navbar = () => {
           </button>
           <ul className="navbar-content-links">
             <li><a href="#about" onClick={() => setToggleMenu(false)}>Home</a></li>
-            <li><a href="#paranoia" onClick={() => setToggleMenu(false)}>Paranoia</a></li>
-            <li><a href="#trailer" onClick={() => setToggleMenu(false)}>Trailer</a></li>
-            <li><a href="#projectfear" onClick={() => setToggleMenu(false)}>Project Fear</a></li>
-            <li><a href="#newsletter" onClick={() => setToggleMenu(false)}>Contact</a></li>
+            <li><a href="#paranoae" onClick={() => setToggleMenu(false)}>Paranoae</a></li>
+            <li><a href="#dolor" onClick={() => setToggleMenu(false)}>Dolor</a></li>
+            <li><a href="#ostracized" onClick={() => setToggleMenu(false)}>Ostracized</a></li>
+            <li><a href="#whatliesbeyond" onClick={() => setToggleMenu(false)}>What Lies Beyond</a></li>
+            <li><a href="#newsletter" onClick={() => setToggleMenu(false)}>Newsletter</a></li>
           </ul>
         </div>
       )}

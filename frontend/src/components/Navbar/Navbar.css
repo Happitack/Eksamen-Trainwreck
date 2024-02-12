@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  padding: 2rem 2rem;
+  padding: 2rem 5rem;
   z-index: 10;
 }
 
@@ -20,12 +20,13 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 15%;
+  width: 20%;
   height: 100vh;
   background: var(--color-black);
   transition: .5s ease;
   flex-direction: column;
   z-index: 5;
+  border-right: 4px solid var(--color-white);
 }
 
 .navbar-content-menu-close {
@@ -34,12 +35,12 @@
   justify-content: center;
   position: absolute;
   top: 65px;
-  left: 35px;
   border-style: none;
   background: none;
 }
 
 .navbar-content-links li {
+  display: flex;
   list-style: none;
   margin: 2rem;
   cursor: pointer;
@@ -124,7 +125,6 @@ cursor: pointer;
 }
 
 .navbar-links li {
-  margin: 0 1rem;
   cursor: pointer;
 }
 
@@ -155,9 +155,7 @@ cursor: pointer;
 
 
 @media screen and (min-width: 2000px) {
-  .navbar-logo {
-    width: 40%; 
-  }
+
 
   .navbar-content
   {
@@ -167,6 +165,26 @@ cursor: pointer;
   .navbar-content-menu {
       width: 100%;
   }
+}
+
+@media screen and (max-width: 1600px) {
+  .navbar-links {
+      display: none;
+  }
+
+  .navbar-content {
+      display: flex;
+  }
+
+  .navbar-content-icon {
+    width: 30%;
+  }
+
+  .navbar-content-links li {
+      font-size: 1.5rem;
+  }
+
+  
 }
 
 @media screen and (max-width: 1150px) {
@@ -185,6 +203,35 @@ cursor: pointer;
   .navbar-content-icon {
     width: 30%;
   }
+  
+}
+
+@media screen and (max-width: 900px) {
+  .navbar {
+      padding: 1rem;
+  }
+
+  .navbar-content-menu {
+      width: 100%;
+  }
+
+  .navbar-logo {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .navbar {
+      padding: 1rem;
+  }
+
+  .navbar-content-menu {
+      width: 100%;
+  }
+
+  .navbar-content-links li {
+      font-size: 1.25rem;
+  }
 }
 
 @media screen and (max-width: 650px) {
@@ -194,5 +241,9 @@ cursor: pointer;
 
   .navbar-content-menu {
       width: 100%;
+  }
+
+  .navbar-content-links li {
+      font-size: 1rem;
   }
 }

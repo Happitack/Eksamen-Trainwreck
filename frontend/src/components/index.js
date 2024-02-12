@@ -1,11 +1,9 @@
 import Navbar from "./Navbar/Navbar"; 
-import FooterOverlay from "./Footer/FooterOverlay";
 import Newsletter from "./Footer/Newsletter";
-import SubHeading from "./SubHeading/SubHeading";
+import SoMe from "./Footer/SoMe";
 
 export {
    Navbar, 
-   FooterOverlay,
    Newsletter,
-   SubHeading,
+   SoMe
 };
