@@ -2,60 +2,40 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 
 .app__aboutus-overlay {
-  position: relative;
-  inset: 0;
-}
-
-.app__aboutus-content {
-  width: 100%;
-  z-index: 2;
+  height: 100%;
   display: flex;
-}
-
-.app__aboutus-content_about {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-
-  text-align: right;
 }
 
-/* Controls the animation of the main logo. 0-100% represents the total time of the animation and what happens each step */
-@keyframes pulse {
-  0% {
-    filter: opacity(80%);
-  }
-  25% {
-    filter: opacity(75%);
-  }
-  50% {
-    filter: opacity(60%);
-  }
-  75% {
-    filter: opacity(75%);
-  }
-  100% {
-    filter: opacity(80%);
-  }
+.align-bottom-left {
+  justify-content: flex-end;
+  align-items: flex-start;
 }
 
-/* Controls the usage of the above keyframe. Currently set to take the above keyframes and spread them out over 4s */
-.app__aboutus-overlay img {
-  height: 910px;
-  z-index: 0;
-  animation: pulse 4s infinite ease-in-out;
+.app__aboutus_featured-item {
+  align-items: flex-start;
+  margin: -15px 0;
 }
 
+.app__aboutus_featured-item-title {
+  align-items: flex-start;
+  margin: 0;
+}
 
-@media screen and (min-width: 2000px) {
-  .app__aboutus-overlay img {
-      height: 1110px;
-  }
+.app__aboutus_featured_item_hero-title {
+  align-items: flex-start;
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 5rem;
+  color: var(--color-white);
+}
+
+.app__aboutus_featured_item_hero-title:hover {
+  color: var(--color-white-trans);
 }
 
 @media screen and (max-width: 900px) {
@@ -63,8 +43,26 @@
       flex-direction: column;
   }
 
-  .app__aboutus-content_knife {
-      margin: 4rem 0;
+  .app__aboutus_featured_item_hero-title {
+      font-size: 4.5rem;
+  }
+
+  .app__aboutus_featured-item {
+    margin: -13px 0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .app__aboutus-content {
+      flex-direction: column;
+  }
+
+  .app__aboutus_featured_item_hero-title {
+      font-size: 4rem;
+  }
+
+  .app__aboutus_featured-item {
+    margin: -11px 0;
   }
 }
 
@@ -72,5 +70,13 @@
   .app__aboutus-overlay img {
       width: 80%;
       height: 80%;
+  }
+
+  .app__aboutus_featured_item_hero-title {
+      font-size: 3.5rem;
+  }
+
+  .app__aboutus_featured-item {
+    margin: -9px 0;
   }
 }

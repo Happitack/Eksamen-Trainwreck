@@ -1,4 +1,4 @@
-const AboutUs = require('../models/AboutUs');
+const AboutUs = require('../models/aboutUsModel');
 const { body, validationResult } = require('express-validator');
 
 // @desc    Get about us page

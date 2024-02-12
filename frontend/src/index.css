@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Graduate&family=Titillium+Web:wght@200;300;400;600;700&family=Trade+Winds&display=swap');
 
 :root {
-  --font-base: 'News Cycle', serif;
-  --font-alt: 'Open Sans', sans-serif;
-  --font-title: 'Juice ITC', serif;
+  --font-base: 'Titillium Web', serif;
+  --font-alt: 'Graduate', sans-serif;
+  --font-title: 'Trade Winds', serif;
   
   --color-golden: #DCCA87;
   --color-black: #0C0C0C;
@@ -12,6 +12,7 @@
   --color-crimson: #F5EFDB;
   --color-grey: #AAAAAA;
   --color-white: #FFFFFF;
+  --color-white-trans: #ffffffd0;
   --color-red: #c24444;
 }
 
@@ -27,6 +28,10 @@ a {
   text-decoration: none;
 }
 
+li {
+  list-style-type: none;
+}
+
 .slide-bottom {
   -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -34,8 +39,8 @@ a {
 
 @-webkit-keyframes slide-bottom {
   0% {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
   }
   100% {
     -webkit-transform: translateX(0);
@@ -45,8 +50,8 @@ a {
 
 @keyframes slide-bottom {
   0% {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
   }
   100% {
     -webkit-transform: translateX(0);
