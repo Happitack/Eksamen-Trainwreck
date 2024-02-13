@@ -1,5 +1,5 @@
 const { check, validationResult } = require('express-validator');
-const Newsletter = require('../models/Newsletter');
+const Newsletter = require('../models/newsletterModel');
 
 // @desc    Validate subscribe request
 // @route   POST /api/newsletter/subscribe

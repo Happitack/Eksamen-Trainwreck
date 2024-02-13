@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import { images } from '../../constants';
 import './AboutUs.css';
 
-const AboutUs = () => (
-  <div className="app__aboutus app__bg_anim section__padding" id="about">
+const AboutUs = ({ mainComponentRef }) => (
+  <div ref={mainComponentRef} className="app__aboutus app__bg_anim section__padding" id="about">
     <div className="app__aboutus-overlay align-bottom-left">
 
       <div className="app__aboutus_featured-item">

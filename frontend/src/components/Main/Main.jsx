@@ -1,24 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import { TextContainer, MediaContainer, Trailer1, Trailer2} from '../../container';
+import './Main.css';
 
-const Main = () => {
+const Main = ({ mainComponentRef }) => {
   const [films, setFilms] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/films')
+    axios.get('http://localhost:4000/api/films')
       .then(response => {
         setFilms(response.data);
+        console.log('Films fetched: ', response.data);
       })
       .catch(error => {
         console.error('Error fetching films: ', error);
       });
   }, []);
 
+
   // Define the order of components
   const componentsOrder = ['film', 'Trailer1', 'film', 'film', 'Trailer2', 'film'];
 
   let filmIndex = 0;
+
 
   return (
     <div>
@@ -27,8 +31,8 @@ const Main = () => {
           const film = films[filmIndex];
           filmIndex++;
           return (
-            <div key={film._id}>
-              {index % 2 === 0 ? (
+            <div className="filmContainer" key={film._id} >
+              {filmIndex % 2 === 0 ? (
                 <>
                   <MediaContainer imageName={film.imageName} />
                   <TextContainer title={film.title} description={film.description} releaseDate={film.releaseDate} />

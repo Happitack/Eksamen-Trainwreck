@@ -1,16 +1,16 @@
 .textContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: left;
   height: 100vh;
   width: 100vh;
-  padding: 20px;
   background-color: var(--color-white);
+  font-family: var(--font-base);
 }
 
 .textContainer h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
   color: var(--color-black)
@@ -28,5 +28,29 @@
   font-weight: 400;
   margin-bottom: 1rem;
   color: var(--color-black);
+}
+
+.textContainer-button
+{
+  display: flex;
+  justify-content: bottom;
+  align-items: bottom;
+  margin-top: 1rem;
+}
+
+.readMoreButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 3rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-base);
+  font-size: 1.2rem;
+  font-weight: 400;
+  border-style: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 

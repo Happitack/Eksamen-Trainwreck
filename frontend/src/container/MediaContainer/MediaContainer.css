@@ -2,4 +2,18 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+}
+
+.mediaContainer img {
+  width: 80vh;
+  height: 80vh;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
+  transition: all 1.3s ease;
+}
+
+.mediaContainer img:hover {
+  transform: scale(1.03);
+  transition: all 1.3s ease;
+  cursor: pointer;
 }

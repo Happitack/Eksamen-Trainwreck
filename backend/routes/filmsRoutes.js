@@ -4,12 +4,12 @@ const filmsController = require('../controllers/filmsController');
 
 // Routes for handling data requests
 router.route('/')
-    .get(filmsController.getAllFilms)
+    .get(filmsController.getFilms)
     .post(filmsController.createFilm);
 
 // Routes for handling data requests by ID
 router.route('/:id')
-    .get(filmsController.getFilmById)
+    .get(filmsController.getFilm)
     .put(filmsController.updateFilmById)
     .delete(filmsController.deleteFilmById);
 

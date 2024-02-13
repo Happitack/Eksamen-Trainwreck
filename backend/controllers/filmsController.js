@@ -1,11 +1,11 @@
 const { body, validationResult } = require('express-validator');
-const Film = require('../models/Film');
+const Films = require('../models/filmsModel');
 
 // Validation rules
 exports.validateFilm = [
   body('title', 'Film title is required').trim().isLength({ min: 1, max: 100 }).withMessage('Film title cannot be more than 100 characters'),
   body('description', 'Film description is required').trim().isLength({ min: 1, max: 500 }).withMessage('Film description cannot be more than 500 characters'),
-  body('releaseDate', 'Film release date is required').isISO8601().toDate(),
+  body('releaseDate', 'Film release date is required').trim().isLength({ min: 1, max: 50 }),
   body('imageName', 'Image name is required').trim().isLength({ min: 1, max: 100 })
 ]
 

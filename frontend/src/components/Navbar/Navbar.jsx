@@ -1,4 +1,4 @@
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { FaLock } from "react-icons/fa";
@@ -7,21 +7,25 @@ import images from '../../constants/images';
 import './Navbar.css';
 import Logo from '../../assets/logoSVG';
 
-const Navbar = () => {
+const Navbar = ({mainComponentRef}) => {
   // State variable for checking if the page has been scrolled down
   const [isScrolled, setIsScrolled] = React.useState(false);
 
   // State variable for toggling the navigation menu on small screens
   const [toggleMenu, setToggleMenu] = React.useState(false);
 
+  // State variable for checking if the icon should be rotated
+  const [isRotated, setIsRotated] = useState(false);
+
   const [isHovered, setIsHovered] = useState(false);
 
   React.useEffect(() => {
-
-    // Function to handle scrolling. Sets isScrolled state based on whether the page has been scrolled down
     const handleScroll = () => {
-      const show = window.scrollY > 50;
-      if (show !== isScrolled) setIsScrolled(show);
+      if(mainComponentRef.current) {
+        const show = mainComponentRef.current.getBoundingClientRect().bottom <= 200;
+        console.log('handleScroll called, show:', show); // Add this line
+        if (show !== isScrolled) setIsScrolled(show);
+      }
     };
 
     document.addEventListener('scroll', handleScroll); // Adds an event listener to handle scrolling
@@ -29,20 +33,21 @@ const Navbar = () => {
     return () => {
       document.removeEventListener('scroll', handleScroll); // Removes the event listener when the component unmounts
     };
-  }, [isScrolled]); // Is run when isScrolled changes
+  }, [isScrolled, mainComponentRef]); // Is run when isScrolled changes
+
+  const handleMenuToggle = () => {
+    setToggleMenu(!toggleMenu);
+    setIsRotated(!isRotated);
+  };
 
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-      <button className="navbar-content" onClick={() => setToggleMenu(!toggleMenu)}>
-        <GiHamburgerMenu className="navbar-content-icon" color="#fff" fontSize={30} />
-        <span className='navbar-content-text'>MENU</span>
+      <button className={`navbar-content ${toggleMenu ? 'menu-open' : ''}`} onClick={handleMenuToggle}>
+        <GiHamburgerMenu className={`navbar-content-icon ${toggleMenu ? 'menu-open' : ''}`} style={{ transform: isRotated ? 'rotate(90deg)' : '' }} color="#fff" fontSize={30} />
+        <span className='navbar-content-text'>{toggleMenu ? 'CLOSE' : 'MENU'}</span>
       </button>
       {toggleMenu && (
         <div className="navbar-content-menu flex__center slide-bottom">
-          <button className="navbar-content-menu-close" onClick={() => setToggleMenu(false)}>
-            <AiOutlineClose className="navbar-content-close-button" />
-            <span className='navbar-content-close-button-text'>CLOSE</span>
-          </button>
           <ul className="navbar-content-links">
             <li><a href="#about" onClick={() => setToggleMenu(false)}>Home</a></li>
             <li><a href="#paranoae" onClick={() => setToggleMenu(false)}>Paranoae</a></li>

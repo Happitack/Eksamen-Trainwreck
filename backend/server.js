@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 4000;
 // Load third-party modules
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 // Load middleware
 const {errorHandler} = require('./middleware/errorHandler');
@@ -15,10 +16,13 @@ const connectDB = require('./config/db');
 // Load routes
 const aboutUsRoutes = require('./routes/aboutUsRoutes');
 const filmsRoutes = require('./routes/filmsRoutes');
-const newsletterRoutes = require('./routes/newsletterRoutes');
+const newsletterRoutes = require('./routes/newletterRoutes');
 
 // Initialize express
 const app = express(); 
+
+// Enable CORS
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
