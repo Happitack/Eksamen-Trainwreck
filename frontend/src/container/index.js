@@ -1,9 +1,9 @@
+import Trailer1 from './Trailer1/Trailer1';
+import Trailer2 from './Trailer2/Trailer2';
 import AboutUs from './AboutUs/AboutUs';
-import Footer from './Footer/Footer';
-import Trailer from './Trailer/Trailer';
+import TextContainer from './TextContainer/TextContainer';
+import MediaContainer from './MediaContainer/MediaContainer';
 
 export {
-  AboutUs,
-  Footer,
-  Trailer,
+  Trailer1, Trailer2, AboutUs, TextContainer, MediaContainer
 };

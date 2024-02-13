@@ -16,7 +16,11 @@ const filmSchema = new mongoose.Schema({
   releaseDate: {
     type: Date,
     required: [true, 'Film release date is required']
-  }
+  },
+  imageName: {
+    type: String,
+    required: [true, 'Image name is required']
+  },
 }, {
   timestamps: true
 })

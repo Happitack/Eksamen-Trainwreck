@@ -1,0 +1,32 @@
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  height: 100vh;
+  width: 100vh;
+  padding: 20px;
+  background-color: var(--color-white);
+}
+
+.textContainer h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-black)
+}
+
+.textContainer h2 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: var(--color-grey);
+}
+
+.textContainer p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: var(--color-black);
+}
+

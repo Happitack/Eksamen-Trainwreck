@@ -1,9 +1,7 @@
 import Navbar from "./Navbar/Navbar"; 
-import Newsletter from "./Footer/Newsletter";
-import SoMe from "./Footer/SoMe";
+import Footer from "./Footer/Footer";
+import Main from "./Main/Main";
 
 export {
-   Navbar, 
-   Newsletter,
-   SoMe
+   Navbar, Footer, Main
 };
