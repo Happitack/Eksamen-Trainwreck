@@ -5,7 +5,8 @@ const Film = require('../models/Film');
 exports.validateFilm = [
   body('title', 'Film title is required').trim().isLength({ min: 1, max: 100 }).withMessage('Film title cannot be more than 100 characters'),
   body('description', 'Film description is required').trim().isLength({ min: 1, max: 500 }).withMessage('Film description cannot be more than 500 characters'),
-  body('releaseDate', 'Film release date is required').isISO8601().toDate()
+  body('releaseDate', 'Film release date is required').isISO8601().toDate(),
+  body('imageName', 'Image name is required').trim().isLength({ min: 1, max: 100 })
 ]
 
 // desc: Get all films
@@ -40,7 +41,8 @@ exports.createFilm = [
       const film = await Films.create({
         title: req.body.title,
         description: req.body.description,
-        releaseDate: req.body.releaseDate
+        releaseDate: req.body.releaseDate,
+        imageName: req.body.imageName
       });
       res.status(200).json(film);
     } catch (error) {
