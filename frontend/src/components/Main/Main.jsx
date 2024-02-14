@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { getFilms } from '../../utils/filmAPI';
 import { TextContainer, MediaContainer, Trailer1, Trailer2} from '../../container';
 import './Main.css';
 
@@ -7,10 +7,10 @@ const Main = ({ mainComponentRef }) => {
   const [films, setFilms] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:4000/api/films')
-      .then(response => {
-        setFilms(response.data);
-        console.log('Films fetched: ', response.data);
+    getFilms()
+      .then(films => {
+        setFilms(films);
+        console.log('Films fetched: ', films);
       })
       .catch(error => {
         console.error('Error fetching films: ', error);
