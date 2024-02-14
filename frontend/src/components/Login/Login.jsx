@@ -5,7 +5,6 @@ import { authenticateUser } from '../../utils/api';
 import './Login.css';
 
 function Login({ onClose, onLogin }) {
-  console.log('Login component rendered');
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -23,17 +22,22 @@ function Login({ onClose, onLogin }) {
 
   return ReactDOM.createPortal(
     <div className="login-popup">
+      <div className="login-popup-top">
+      <h2>USER LOGIN</h2>
+      <button className="close-button" type="button" onClick={onClose}>X</button>
+      </div>
       <form className="login-form" onSubmit={handleSubmit}>
         <label>
-          Username:
+          <p>Username:</p>
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
         </label>
         <label>
-          Password:
+          <p>Password:</p>
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </label>
-        <button type="submit">Login</button>
-        <button type="button" onClick={onClose}>Close</button>
+        <div className="loginButtons">
+          <button type="submit">LOGIN</button>
+        </div>
       </form>
     </div>,
     document.body

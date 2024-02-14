@@ -1,4 +1,4 @@
 import images from './images';
-import train from '../assets/train.mp4';
+import videos from './videos';
 
-export { images, train };
+export { images, videos };

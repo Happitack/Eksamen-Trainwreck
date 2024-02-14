@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { subscribe } from '../../../utils/newsletterAPI';
 import './Newsletter.css';
 
 function Newsletter() {
@@ -8,28 +8,20 @@ function Newsletter() {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
-  const subscribe = async (e) => {
+  const subscribeToNewsletter = async (e) => {
     e.preventDefault();
-  
     try {
-      const res = await axios.post('/api/newsletter/subscribe', { email });
-      setSuccess(res.data.message);
+      const response = await subscribe(email);
+      setSuccess(response.message);
       setError('');
       setInputValue('');
-    } 
-    catch (err) {
-      if (err.response && err.response.data) {
-        if (err.response.data.errors) {
-          setError(err.response.data.errors[0].msg);
-        } 
-        else if (err.response.data.error) {
-          setError(err.response.data.error);
-        }
-      } 
-      else {
+    } catch (error) {
+      if (error.message === 'Email is already subscribed') {
+        setError('This email is already subscribed to the newsletter.');
+      } else {
         setError('An error occurred. Please try again.');
       }
-      setInputValue(''); // clear the input field
+      setInputValue('');
     }
   }
 
@@ -54,7 +46,7 @@ function Newsletter() {
             onChange={handleChange}
             className={error ? "input-error" : ""}
           />
-          <button type="button" className="custom__button" onClick={subscribe}>
+          <button type="button" className="custom__button" onClick={subscribeToNewsletter}>
             Subscribe
           </button>
         </div>

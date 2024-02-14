@@ -1,7 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { BsFillPlayFill } from 'react-icons/bs';
-import { train } from '../../constants';
+import { videos } from '../../constants';
 import './Trailer2.css';
+
+const { RainyNight } = videos;
 
 const Trailer2 = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -20,7 +22,7 @@ const Trailer2 = () => {
   };
 
   return <div className="app__video">
-      <video ref={videoRef} src={train} type="video/mp4" loop controls={false} muted onClick={togglePlayPause} />
+      <video ref={videoRef} src={RainyNight} type="video/mp4" loop controls={false} muted onClick={togglePlayPause} />
 
       <div className="app__video-overlay flex__center" onClick={togglePlayPause} id="trailer">
         {!isPlaying && <div className="app__video-overlay_circle flex__center">

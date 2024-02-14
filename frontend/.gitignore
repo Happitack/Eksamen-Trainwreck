@@ -11,6 +11,9 @@
 # production
 /build
 
+# video files
+/frontend/src/assets/video/
+
 # misc
 .DS_Store
 .env.local

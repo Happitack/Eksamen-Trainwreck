@@ -1,13 +1,36 @@
 .app__aboutus {
-  position: relative;
   display: flex;
+  position: relative;
   flex-direction: column;
+  justify-content: space-between;
   height: 100vh;
+  background-color: var(--color-black);
+}
+
+.app__bg_anim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.app__bg_anim.blur-out {
+  filter: blur(10px);
+  transition: filter 1s;
+}
+
+.app__bg_anim.hidden {
+  display: block;
+  opacity: 0;
 }
 
 .app__aboutus-overlay {
+  width: 100%;
   height: 100%;
   display: flex;
+  position: relative;
   flex-direction: column;
 }
 
@@ -18,7 +41,6 @@
 
 .app__aboutus_featured-item {
   align-items: flex-start;
-  margin: -15px 0;
 }
 
 .app__aboutus_featured-item-title {
@@ -37,6 +59,7 @@
 .app__aboutus_featured_item_hero-title:hover {
   color: var(--color-white-trans);
 }
+
 
 @media screen and (max-width: 900px) {
   .app__aboutus-content {

@@ -17,7 +17,7 @@ const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
 const aboutUsRoutes = require('./routes/aboutUsRoutes');
 const filmsRoutes = require('./routes/filmsRoutes');
-const newsletterRoutes = require('./routes/newletterRoutes');
+const newsletterRoutes = require('./routes/newsletterRoutes');
 
 // Initialize express
 const app = express(); 
@@ -40,7 +40,7 @@ app.use((req, res, next) => {
 // Routing middleware
 app.use('/', userRoutes)
 app.use('/api/films', filmsRoutes);
-app.use('/api/newsletter', newsletterRoutes);
+app.use('/api/newsletters', newsletterRoutes);
 app.use('/api/about-us', aboutUsRoutes);
 app.use(errorHandler);
 
