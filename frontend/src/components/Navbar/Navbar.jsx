@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
+import Login from '../Login/Login';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { AiOutlineClose } from 'react-icons/ai';
 import { FaLock } from "react-icons/fa";
 import { FaUnlock } from "react-icons/fa";
-import images from '../../constants/images';
-import './Navbar.css';
 import Logo from '../../assets/logoSVG';
+import './Navbar.css';
 
 const Navbar = ({mainComponentRef}) => {
   // State variable for checking if the page has been scrolled down
@@ -17,7 +16,12 @@ const Navbar = ({mainComponentRef}) => {
   // State variable for checking if the icon should be rotated
   const [isRotated, setIsRotated] = useState(false);
 
+  // State variable for checking if a button is hovered
   const [isHovered, setIsHovered] = useState(false);
+
+  // State variable for showing the login popup
+  const [showLogin, setShowLogin] = useState(false);
+
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -38,6 +42,19 @@ const Navbar = ({mainComponentRef}) => {
   const handleMenuToggle = () => {
     setToggleMenu(!toggleMenu);
     setIsRotated(!isRotated);
+  };
+  
+  const handleLoginClick = () => {
+    console.log('Login button clicked');
+    setShowLogin(true);
+  };
+  
+  const handleLoginClose = () => {
+    setShowLogin(false);
+  };
+
+  const handleLogin = (username) => {
+
   };
 
   return (
@@ -61,10 +78,11 @@ const Navbar = ({mainComponentRef}) => {
       <div className="navbar-logo">
         <Logo />
       </div>
-      <button className="navbar-login-button" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+      <button className="navbar-login-button" onClick={handleLoginClick} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
         <span className='navbar-login-text'>LOGIN</span>
         {isHovered ? <FaUnlock className='navbar-login-button-unlocked' /> : <FaLock className='navbar-login-button-locked'/>}
       </button>
+      {showLogin && <Login onClose={handleLoginClose} onLogin={handleLogin} />}
     </nav>
   );
 };

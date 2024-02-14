@@ -14,6 +14,7 @@ const {errorHandler} = require('./middleware/errorHandler');
 const connectDB = require('./config/db');
 
 // Load routes
+const userRoutes = require('./routes/userRoutes');
 const aboutUsRoutes = require('./routes/aboutUsRoutes');
 const filmsRoutes = require('./routes/filmsRoutes');
 const newsletterRoutes = require('./routes/newletterRoutes');
@@ -37,6 +38,7 @@ app.use((req, res, next) => {
 });
 
 // Routing middleware
+app.use('/', userRoutes)
 app.use('/api/films', filmsRoutes);
 app.use('/api/newsletter', newsletterRoutes);
 app.use('/api/about-us', aboutUsRoutes);
