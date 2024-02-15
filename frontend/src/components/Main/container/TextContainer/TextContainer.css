@@ -3,17 +3,18 @@
   flex-direction: column;
   align-items: left;
   justify-content: left;
-  height: 100vh;
-  width: 100vh;
   background-color: var(--color-white);
   font-family: var(--font-base);
+  max-width: 40%;
 }
 
 .textContainer h1 {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: var(--color-black)
+  color: var(--color-black);
+  border-left: 1rem solid var(--color-red);
+  padding-left: 1rem;
 }
 
 .textContainer h2 {
@@ -52,5 +53,10 @@
   border-style: none;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.readMoreButton:hover {
+  background-color: var(--color-red);
+  color: var(--color-white);
 }
 

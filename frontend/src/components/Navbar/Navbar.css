@@ -19,14 +19,18 @@
 
 .navbar-content-icon:hover:not(.rotate) {
   transform: scale(1.1);
+  color: var(--color-red);
 }
 
 .navbar-content:not(.menu-open):hover .navbar-content-icon {
   transform: scale(1.1);
+  color: var(--color-red);
+
 }
 
 .navbar-content-icon {
   transition: transform 0.3s ease;
+  color: var(--color-white);
 }
 
 .navbar-content:hover .navbar-content-icon {
@@ -88,7 +92,7 @@ cursor: pointer;
 }
 
 .navbar-content-links li:hover {
-  color: rgb(211, 30, 30);
+  color: var(--color-red);
   transition: .5s ease;
 }
 
@@ -102,11 +106,14 @@ cursor: pointer;
   background: none;
   cursor: pointer;
   max-width: 20vw;
+  transition: all 0.3s ease;
 }
 
 .navbar-login-button:hover .navbar-login-button-unlocked {
   transform: scale(1.2);
   transition: all 0.3s ease;
+  color: var(--color-red);
+
 }
 
 .navbar-content-text {

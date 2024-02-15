@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import FilmsAdmin from '../admin/components/FilmsAdmin/FilmsAdmin';
-import NewsletterAdmin from '../admin/components/NewsletterAdmin/NewsletterAdmin';
+import BlogAdmin from '../admin/components/BlogAdmin/BlogAdmin';
 import './AdminDashboard.css';
 
 
@@ -31,15 +31,15 @@ const AdminDashboard = () => {
           Films Admin
         </li>
         <li
-          className={activeTab === 'newsletter' ? 'active' : ''}
-          onClick={() => handleTabChange('newsletter')}
+          className={activeTab === 'blogs' ? 'active' : ''}
+          onClick={() => handleTabChange('blogs')}
         >
-          Newsletter Admin
+          Blog Admin
         </li>
       </ul>
 
       {activeTab === 'films' && <FilmsAdmin />}
-      {activeTab === 'newsletter' && <NewsletterAdmin />}
+      {activeTab === 'blogs' && <BlogAdmin />}
     </div>
   );
 };

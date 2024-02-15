@@ -67,7 +67,7 @@ const Navbar = ({mainComponentRef}) => {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <button className={`navbar-content ${toggleMenu ? 'menu-open' : ''}`} onClick={handleMenuToggle}>
-        <GiHamburgerMenu className={`navbar-content-icon ${toggleMenu ? 'menu-open' : ''}`} style={{ transform: isRotated ? 'rotate(90deg)' : '' }} color="#fff" fontSize={30} />
+        <GiHamburgerMenu className={`navbar-content-icon ${toggleMenu ? 'menu-open' : ''}`} style={{ transform: isRotated ? 'rotate(90deg)' : '' }} fontSize={30} />
         <span className='navbar-content-text'>{toggleMenu ? 'CLOSE' : 'MENU'}</span>
       </button>
       {toggleMenu && (

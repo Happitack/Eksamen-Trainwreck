@@ -18,6 +18,7 @@ const userRoutes = require('./routes/userRoutes');
 const aboutUsRoutes = require('./routes/aboutUsRoutes');
 const filmsRoutes = require('./routes/filmsRoutes');
 const newsletterRoutes = require('./routes/newsletterRoutes');
+const blogRoutes = require('./routes/blogRoutes');
 
 // Initialize express
 const app = express(); 
@@ -42,6 +43,7 @@ app.use('/', userRoutes)
 app.use('/api/films', filmsRoutes);
 app.use('/api/newsletters', newsletterRoutes);
 app.use('/api/about-us', aboutUsRoutes);
+app.use('/api/blog', blogRoutes);
 app.use(errorHandler);
 
 app.listen(PORT, () => {

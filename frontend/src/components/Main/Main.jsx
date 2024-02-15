@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getFilms } from '../../utils/filmAPI';
 import { TextContainer, MediaContainer, Trailer1, Trailer2} from './container';
+import { Blog } from '../'
 import './Main.css';
 
 const Main = ({ mainComponentRef }) => {
@@ -19,7 +20,7 @@ const Main = ({ mainComponentRef }) => {
 
 
   // Define the order of components
-  const componentsOrder = ['film', 'Trailer1', 'film', 'film', 'Trailer2', 'film'];
+  const componentsOrder = ['film', 'Trailer1', 'film', 'Trailer2', 'film', 'film',  'Blog',];
 
   let filmIndex = 0;
 
@@ -47,6 +48,8 @@ const Main = ({ mainComponentRef }) => {
           );
         } else if (componentType === 'Trailer1') {
           return <Trailer1 key={componentType} />;
+        } else if (componentType === 'Blog') {
+          return <Blog key={componentType} />;
         } else if (componentType === 'Trailer2') {
           return <Trailer2 key={componentType} />;
         } else {

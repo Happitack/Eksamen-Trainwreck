@@ -61,7 +61,8 @@
 }
 
 .app__aboutus_featured_item_hero-title:hover {
-  color: var(--color-white-trans);
+  color: var(--color-red);
+  transition: 1s ease;
 }
 
 

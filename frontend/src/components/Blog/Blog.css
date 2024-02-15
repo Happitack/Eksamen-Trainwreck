@@ -1,0 +1,98 @@
+.Blog-comp
+{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--color-white);
+  font-family: var(--font-base);
+  color: var(--color-black);
+
+}
+
+.Blog-header {
+  display: flex;
+  background-color: var(--color-red);
+  align-items: left;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.Blog-header h1 {
+  font-weight: 400;
+  font-size: 3rem;
+  color: var(--color-white);
+  font-family: var(--font-base);
+}
+
+.Blog-content {
+  display: flex;
+  flex-direction: Row;
+  align-items: left;
+  justify-content: left;
+  width: 100%;
+  background-color: var(--color-white);
+}
+
+.Blog-item {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: var(--color-white);
+  transition: all 0.3s ease;
+}
+
+.Blog-item h1 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-black);
+  font-family: var(--font-base);
+  border-left: 1rem solid var(--color-red);
+  padding-left: 1rem;
+}
+
+.Blog-item h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: var(--color-grey);
+  font-family: var(--font-base);
+}
+
+.Blog-item p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: var(--color-black);
+  font-family: var(--font-base);
+}
+
+.Blog-item .datetime p {
+  font-size: 1.1rem; 
+  font-family: var(--font-base);
+  color: var(--color-grey);
+  font-weight: 400;
+}
+
+.Blog-item button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 3rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-base);
+  font-size: 1.2rem;
+  font-weight: 400;
+  border-style: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.Blog-item button:hover {
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
