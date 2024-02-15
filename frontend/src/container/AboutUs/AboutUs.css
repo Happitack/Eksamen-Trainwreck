@@ -40,15 +40,19 @@
 }
 
 .app__aboutus_featured-item {
+  display: flex;
   align-items: flex-start;
+  z-index: 1;
 }
 
 .app__aboutus_featured-item-title {
+  display: flex;
   align-items: flex-start;
   margin: 0;
 }
 
 .app__aboutus_featured_item_hero-title {
+  display: flex;
   align-items: flex-start;
   font-family: var(--font-base);
   font-weight: 400;

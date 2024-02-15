@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Login from '../Login/Login';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaLock } from "react-icons/fa";
 import { FaUnlock } from "react-icons/fa";
+import { getFilms } from '../../utils/filmAPI';
 import Logo from '../../assets/logoSVG';
 import './Navbar.css';
 
@@ -22,8 +23,14 @@ const Navbar = ({mainComponentRef}) => {
   // State variable for showing the login popup
   const [showLogin, setShowLogin] = useState(false);
 
+  const [films, setFilms] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
+    getFilms().then(data => setFilms(data));
+  }, []);
+
+
+  useEffect(() => {
     const handleScroll = () => {
       if(mainComponentRef.current) {
         const show = mainComponentRef.current.getBoundingClientRect().bottom <= 200;
@@ -66,12 +73,13 @@ const Navbar = ({mainComponentRef}) => {
       {toggleMenu && (
         <div className="navbar-content-menu flex__center slide-bottom">
           <ul className="navbar-content-links">
-            <li><a href="#about" onClick={() => setToggleMenu(false)}>Home</a></li>
-            <li><a href="#paranoae" onClick={() => setToggleMenu(false)}>Paranoae</a></li>
-            <li><a href="#dolor" onClick={() => setToggleMenu(false)}>Dolor</a></li>
-            <li><a href="#ostracized" onClick={() => setToggleMenu(false)}>Ostracized</a></li>
-            <li><a href="#whatliesbeyond" onClick={() => setToggleMenu(false)}>What Lies Beyond</a></li>
-            <li><a href="#newsletter" onClick={() => setToggleMenu(false)}>Newsletter</a></li>
+            {films.map(film => (
+              <li key={film._id}>
+                <a href={`#${film.title.replace(/\s+/g, '').toLowerCase()}`} onClick={() => setToggleMenu(false)}>
+                  {film.title}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       )}
