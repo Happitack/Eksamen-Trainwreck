@@ -5,3 +5,12 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+.filmContainer > .mediaContainer:nth-child(1) {
+
+  border-left: 1rem solid var(--color-red);
+}
+
+.filmContainer > .mediaContainer:nth-child(2) {
+  border-right: 1rem solid var(--color-red);
+}

@@ -9,11 +9,9 @@
   width: 80vh;
   height: 80vh;
   transition: all 2s ease;
-  border: 0 solid var(--color-black);
 }
 
 .mediaContainer img:hover {
   transition: all 2s ease;
   cursor: pointer;
-  border: 4vh solid var(--color-black);
 }
