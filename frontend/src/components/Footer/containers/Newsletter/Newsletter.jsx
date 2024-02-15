@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { subscribe } from '../../../utils/newsletterAPI';
+import { subscribe } from '../../../../utils/newsletterAPI'
 import './Newsletter.css';
 
 function Newsletter() {

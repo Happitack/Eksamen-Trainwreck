@@ -180,19 +180,6 @@ cursor: pointer;
 
 
 
-@media screen and (min-width: 2000px) {
-
-
-  .navbar-content
-  {
-    width: 100%;
-  }
-
-  .navbar-content-menu {
-      width: 100%;
-  }
-}
-
 @media screen and (max-width: 1600px) {
   .navbar-links {
       display: none;

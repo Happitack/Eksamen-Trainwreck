@@ -1,7 +1,5 @@
 import React from 'react';
-
-import Newsletter from './Newsletter/Newsletter';
-import SoMe from './SoMe/SoMe';
+import { SoMe, Newsletter } from './containers';
 
 import './Footer.css';
 

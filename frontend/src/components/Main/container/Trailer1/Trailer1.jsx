@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { BsFillPlayFill } from 'react-icons/bs';
-import { videos } from '../../constants';
+import { videos } from '../../../../constants';
 import './Trailer1.css';
 
 

@@ -22,9 +22,11 @@ function Login({ onClose, onLogin }) {
 
   return ReactDOM.createPortal(
     <div className="login-popup">
+      <div className="login-popup-close">
+        <button className="close-button" type="button" onClick={onClose}>X</button>
+      </div>
       <div className="login-popup-top">
-      <h2>USER LOGIN</h2>
-      <button className="close-button" type="button" onClick={onClose}>X</button>
+      <h2>Admin Access</h2>
       </div>
       <form className="login-form" onSubmit={handleSubmit}>
         <label>

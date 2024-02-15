@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getFilms } from '../../utils/filmAPI';
-import { TextContainer, MediaContainer, Trailer1, Trailer2} from '../../container';
+import { TextContainer, MediaContainer, Trailer1, Trailer2} from './container';
 import './Main.css';
 
 const Main = ({ mainComponentRef }) => {

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { BsFillPlayFill } from 'react-icons/bs';
-import { videos } from '../../constants';
+import { videos } from '../../../../constants';
 import './Trailer2.css';
 
 const { RainyNight } = videos;

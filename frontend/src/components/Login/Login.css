@@ -5,19 +5,21 @@
   transform: translate(-50%, -50%);
   background-color: var(--color-black);
   box-shadow : 0 0 10px 0 rgba(0, 0, 0, 0.637);
-  padding: 40px;
+  padding: 20px;
   z-index: 1000;
+  border: rgb(100, 100, 100) 1px solid;
+  border-radius: 5px;
 }
 
 .login-popup h2 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: #fff;
   font-family: var(--font-base);
+  font-weight: 200;
 }
 
 .login-form label {
   display: block;
-  margin-bottom: 10px;
   color: #fff;
   font-family: var(--font-base);
 }
@@ -35,15 +37,17 @@
 .loginButtons
 {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content:center;
+  margin-top: 2vh;
 }
 
 .login-form button {
+  display: flex;
   font-family: var(--font-base);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
-  padding: 10px 20px;
+  padding: 10px 40px;
   background-color: #ffffff;
   color: var(--color-black);
   border: none;
@@ -55,13 +59,17 @@
   margin-bottom: 10px;
 }
 
+.login-popup-close {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .close-button {
-  margin-top: -60px;
-  margin-right: -20px;
   background-color: #ffffff;
   color: #000000;
   border: none;
-  padding: 5px 11px;
+  padding: 4px 10px;
   border-radius: 5px;
   font-family: var(--font-base);
   font-weight: 700;
@@ -75,10 +83,11 @@
 }
 
 .close-button:hover {
-  background-color: #0056b3;
+  background-color: #b3000f;
   color: #ffffff;
 }
 
 .login-form button:hover {
-  background-color: #0056b3;
+  background-color: #b3000f;
+  color: #ffffff;
 }
