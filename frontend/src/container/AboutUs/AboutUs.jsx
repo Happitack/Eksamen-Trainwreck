@@ -32,7 +32,7 @@ const AboutUs = ({ mainComponentRef }) => {
     // Start loading the new video
     setTimeout(() => {
       setNextVideo(videoPath);
-    }, 500); // 2000 milliseconds = 2 seconds
+    }, 200); // 2000 milliseconds = 2 seconds
   };
   
   useEffect(() => {

@@ -6,11 +6,16 @@
   justify-content: space-between;
 }
 
-.filmContainer > .mediaContainer:nth-child(1) {
-
-  border-left: 1rem solid var(--color-red);
+.filmContainer > .mediaContainer:nth-child(odd) {
 }
 
-.filmContainer > .mediaContainer:nth-child(2) {
-  border-right: 1rem solid var(--color-red);
+.filmContainer > .mediaContainer:nth-child(odd) img {
+  border-bottom: 1rem solid var(--color-red);
+}
+
+.filmContainer > .mediaContainer:nth-child(even) {
+}
+
+.filmContainer > .mediaContainer:nth-child(even) img {
+  border-bottom: 1rem solid var(--color-red);
 }

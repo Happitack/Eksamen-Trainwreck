@@ -78,6 +78,8 @@ cursor: pointer;
   top: 45px;
   border-style: none;
   background: none;
+  transition: .5s ease;
+
 }
 
 .navbar-content-links li {
@@ -87,13 +89,17 @@ cursor: pointer;
   color: var(--color-white);
   font-size: 3rem;
   font-family: var(--font-base);
-  transition: .8s ease;
+  transition: 0.5s ease;
   font-variant-caps: all-small-caps;
+  border-left: 0.5rem solid var(--color-red);
+  padding-left: 1rem;
 }
 
 .navbar-content-links li:hover {
   color: var(--color-red);
-  transition: .5s ease;
+  padding-left: 1rem;
+  transition: .8s ease;
+  border-left: 1rem solid var(--color-red);  
 }
 
 .navbar-login-button {
