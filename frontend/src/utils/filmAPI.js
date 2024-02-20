@@ -3,6 +3,11 @@ export async function getFilms() {
   return response.json();
 }
 
+export async function getFilm(id) {
+  const response = await fetch(`http://localhost:4000/api/films/${id}`);
+  return response.json();
+}
+
 export async function createFilm(film) {
   const response = await fetch('http://localhost:4000/api/films', {
     method: 'POST',

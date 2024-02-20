@@ -19,7 +19,7 @@ exports.getFilms = async (req, res) => {
 // desc: Get film by id
 // route: GET /api/films/:id
 exports.getFilm = async (req, res) => {
-  const film = await Film.findById(req.params.id);
+  const film = await Films.findById(req.params.id);
 
   if (!film) {
     return res.status(404).json({ msg: 'Film not found' });

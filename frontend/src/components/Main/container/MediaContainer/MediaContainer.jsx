@@ -11,7 +11,7 @@ const MediaContainer = ({ imageName }) => {
   }
 
   return (
-    <div className='mediaContainer section__padding'>
+    <div className='mediaContainer'>
       <img src={image} alt={imageName} />
     </div>
   );

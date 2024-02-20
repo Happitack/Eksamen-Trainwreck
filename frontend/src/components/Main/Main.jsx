@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getFilms } from '../../utils/filmAPI';
 import { TextContainer, MediaContainer, Trailer1, Trailer2} from './container';
-import { Blog } from '../'
+import { Blog } from '../';
 import './Main.css';
 
 const Main = ({ mainComponentRef }) => {
@@ -36,11 +36,11 @@ const Main = ({ mainComponentRef }) => {
               {filmIndex % 2 === 0 ? (
                 <>
                   <MediaContainer imageName={film.imageName} />
-                  <TextContainer title={film.title} description={film.description} releaseDate={film.releaseDate} />
+                  <TextContainer id={film._id} title={film.title} description={film.description} releaseDate={film.releaseDate} />
                 </>
               ) : (
                 <>
-                  <TextContainer title={film.title} description={film.description} releaseDate={film.releaseDate} />
+                  <TextContainer id={film._id} title={film.title} description={film.description} releaseDate={film.releaseDate} />
                   <MediaContainer imageName={film.imageName} />
                 </>
               )}
@@ -48,10 +48,10 @@ const Main = ({ mainComponentRef }) => {
           );
         } else if (componentType === 'Trailer1') {
           return <Trailer1 key={componentType} />;
-        } else if (componentType === 'Blog') {
-          return <Blog key={componentType} />;
         } else if (componentType === 'Trailer2') {
           return <Trailer2 key={componentType} />;
+        } else if (componentType === 'Blog') {
+          return <Blog key={componentType} />;
         } else {
           return null;
         }

@@ -28,9 +28,8 @@ function Blog() {
               <div className="datetime">
                 <p>{`${monthDay}, ${year}`}</p>
               </div>
-              <h2>By {blog.author}</h2>
-              <img src={blog.imageName} alt={blog.title} />
               <p>{blog.summary}</p>
+              <h2>By {blog.author}</h2>
               <button onClick={() => navigate(`/blog/${blog._id}`)}>Read More</button>
             </div>
           );

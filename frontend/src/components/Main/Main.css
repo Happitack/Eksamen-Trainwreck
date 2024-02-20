@@ -1,21 +1,37 @@
-.main {}
-
 .filmContainer {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-}
-
-.filmContainer > .mediaContainer:nth-child(odd) {
+  padding: 4rem;
 }
 
 .filmContainer > .mediaContainer:nth-child(odd) img {
   border-bottom: 1rem solid var(--color-red);
 }
 
-.filmContainer > .mediaContainer:nth-child(even) {
-}
-
 .filmContainer > .mediaContainer:nth-child(even) img {
   border-bottom: 1rem solid var(--color-red);
+}
+
+.filmContainer > .textContainer:nth-child(odd) {
+  padding-right: 4rem;
+  max-width: 60%;
+}
+
+.filmContainer > .textContainer:nth-child(even) {
+  padding-left: 4rem;
+  max-width: 60%;
+}
+
+@media screen and (max-width: 768px) {
+
+  .filmContainer > .mediaContainer:nth-child(even)
+  {
+    margin-bottom: 2rem;
+  }
+
+  .filmContainer > .mediaContainer:nth-child(odd)
+  {
+    margin-top: 2rem;
+  }
+
 }

@@ -70,10 +70,10 @@
 }
 
 .Blog-item .datetime p {
-  font-size: 1.1rem; 
+  font-size: 1rem; 
   font-family: var(--font-base);
   color: var(--color-grey);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .Blog-item button {
