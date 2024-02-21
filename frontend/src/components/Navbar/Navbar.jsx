@@ -80,6 +80,11 @@ const Navbar = ({mainComponentRef}) => {
                 </a>
               </li>
             ))}
+            <li>
+              <a href="#blog" onClick={() => setToggleMenu(false)}>
+                BLOG
+              </a>
+            </li>
           </ul>
         </div>
       )}

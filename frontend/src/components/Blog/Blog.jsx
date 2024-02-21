@@ -12,7 +12,7 @@ function Blog() {
   }, []);
 
   return (
-    <div className='Blog-comp'>
+    <div className='Blog-comp' id="blog">
       <div className='Blog-header'>
         <h1>NEWS FROM THE STUDIO</h1>
       </div>
