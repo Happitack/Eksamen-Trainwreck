@@ -5,6 +5,24 @@
   color: var(--color-white);
 }
 
+.newsletter_button {
+  background-color: var(--color-white);
+  font-family: (--font-base);
+  color: var(--color-black);
+  border: none;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: var(--font-base);
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.newsletter_button:hover {
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
 .newsletter-input {
   display: flex;
   flex-direction: row;

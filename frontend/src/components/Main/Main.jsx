@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { getFilms } from '../../utils/filmAPI';
 import { TextContainer, MediaContainer, Trailer1, Trailer2} from './container';
 import { Blog } from '../';
 import './Main.css';
 
 const Main = ({ mainComponentRef }) => {
+  const location = useLocation();
   const [films, setFilms] = useState([]);
+  const [scrollPosition, setScrollPosition] = useState(localStorage.getItem('scrollPosition') || 0);
 
   useEffect(() => {
     getFilms()
@@ -16,6 +19,17 @@ const Main = ({ mainComponentRef }) => {
       .catch(error => {
         console.error('Error fetching films: ', error);
       });
+  }, []);
+
+  useEffect(() => {
+    // Save the scroll position when navigating away from the page
+    return () => setScrollPosition(window.scrollY);
+  }, [location]);
+
+  useEffect(() => {
+    // Restore the scroll position when the component is rendered
+    const scrollPosition = localStorage.getItem('scrollPosition') || 0;
+    window.scrollTo(0, scrollPosition);
   }, []);
 
 

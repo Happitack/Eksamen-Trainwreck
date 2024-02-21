@@ -1,0 +1,113 @@
+.FilmDetails_Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-between;
+    padding: 4rem;
+}
+
+.FilmDetails_mediaContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+}
+
+.FilmDetails_mediaContainer img {
+    width: 80%;
+    height: auto;
+}
+
+.FilmDetails_textContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    font-family: var(--font-base);
+    margin-top: 20px;
+    max-width: 50%;
+    justify-content: space-between;
+}
+
+.FilmDetails_textContainer_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.FilmDetails_textContainer_buttonWrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+.FilmDetails_textContainer_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 3rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-base);
+  font-size: 1.2rem;
+  font-weight: 400;
+  border-style: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.FilmDetails_textContainer_button:hover {
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+.FilmDetails_textContainer_title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-black);
+    border-left: 1rem solid var(--color-red);
+    padding-left: 1rem;
+}
+
+.FilmDetails_textContainer_description {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: var(--color-black);
+}
+
+.FilmDetails_textContainer_description h3 {
+    color: var(--color-white);
+    background-color: var(--color-red);
+    padding: 0.5rem;
+}
+
+.FilmDetails_textContainer_description p {
+  margin-top: 1rem;
+}
+
+.FilmDetails_textContainer_releaseDate {
+    display: flex;
+    margin-bottom: 1rem;
+    flex-direction: row;
+    align-items: center;
+    font-family: var(--font-base);
+}
+
+.FilmDetails_textContainer_releaseDate h2 {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.FilmDetails_textContainer_releaseDate p {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.FilmDetails_textContainer_cast {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: var(--color-black);
+}

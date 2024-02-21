@@ -1,0 +1,116 @@
+.BlogDetails_Container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+  padding: 4rem;
+}
+
+.BlogDetails_mediaContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+}
+
+.BlogDetails_mediaContainer img {
+  width: 80%;
+  height: auto;
+}
+
+.BlogDetails_textContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  font-family: var(--font-base);
+  margin-top: 20px;
+  max-width: 50%;
+  justify-content: space-between;
+}
+
+.BlogDetails_textContainer_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.BlogDetails_textContainer_buttonWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.BlogDetails_textContainer_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 3rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-base);
+  font-size: 1.2rem;
+  font-weight: 400;
+  border-style: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.BlogDetails_textContainer_button:hover {
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+.BlogDetails_textContainer_title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-black);
+  border-left: 1rem solid var(--color-red);
+  padding-left: 1rem;
+}
+
+.BlogDetails_textContainer_content {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: var(--color-black);
+}
+
+.BlogDetails_textContainer_content_chunk {
+  margin-top: 1rem;
+}
+
+.BlogDetails_textContainer_date {
+  display: flex;
+  margin-bottom: 1rem;
+  flex-direction: row;
+  align-items: center;
+  font-family: var(--font-base);
+}
+
+.BlogDetails_textContainer_date h2 {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+.BlogDetails_textContainer_date p {
+  font-size: 1.1rem;
+}
+
+.BlogDetails_textContainer_author {
+  display: flex;
+  margin-bottom: 1rem;
+  flex-direction: row;
+  align-items: center;
+  font-family: var(--font-base);
+}
+
+.BlogDetails_textContainer_author h2 {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+.BlogDetails_textContainer_author p {
+  font-size: 1.1rem;
+}

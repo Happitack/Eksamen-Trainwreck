@@ -46,7 +46,7 @@ function Newsletter() {
             onChange={handleChange}
             className={error ? "input-error" : ""}
           />
-          <button type="button" className="custom__button" onClick={subscribeToNewsletter}>
+          <button type="button" className="newsletter_button" onClick={subscribeToNewsletter}>
             Subscribe
           </button>
         </div>

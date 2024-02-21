@@ -3,6 +3,21 @@ export async function getBlog(id) {
     return response.json();
 }
 
+export async function getBlogWithChunks(id) {
+  const response = await fetch(`http://localhost:4000/api/blog/${id}`);
+  const blog = await response.json();
+
+  const fullStopCount = 20; 
+  const sentences = blog.content.split('.');
+  const chunks = [];
+  for (let i = 0; i < sentences.length; i += fullStopCount) {
+    chunks.push(sentences.slice(i, i + fullStopCount).join('.'));
+  }
+  blog.contentChunks = chunks;
+
+  return blog;
+}
+
 export async function getBlogs() {
   const response = await fetch('http://localhost:4000/api/blog');
   return response.json();
