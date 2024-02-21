@@ -75,13 +75,13 @@ const Navbar = ({mainComponentRef}) => {
           <ul className="navbar-content-links">
             {films.map(film => (
               <li key={film._id}>
-                <a href={`#${film.title.replace(/\s+/g, '').toLowerCase()}`} onClick={() => setToggleMenu(false)}>
+                <a href={`#${film.title.replace(/\s+/g, '').toLowerCase()}`}>
                   {film.title}
                 </a>
               </li>
             ))}
             <li>
-              <a href="#blog" onClick={() => setToggleMenu(false)}>
+              <a href="#blog" >
                 BLOG
               </a>
             </li>
