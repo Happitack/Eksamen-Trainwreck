@@ -7,9 +7,10 @@ import './BlogDetails.css';
 
 function BlogDetails() {
   const { id } = useParams();
-  const [blog, setBlog] = useState(null);
   const navigate = useNavigate();
+
   const image = images['Dolor'];
+  const [blog, setBlog] = useState(null);
 
   useEffect(() => {
     getBlogWithChunks(id).then(setBlog);
