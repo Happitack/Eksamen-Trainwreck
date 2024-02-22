@@ -1,10 +1,12 @@
 const request = require('supertest');
 const express = require('express');
 const userRoutes = require('../../routes/userRoutes');
+const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 const User = require('../../models/userModel');
 const bcrypt = require('bcrypt');
 const app = express();
+require('dotenv').config();
 
 app.use(express.json());
 app.use('/api/user', userRoutes);
@@ -57,6 +59,13 @@ describe('User Controller', () => {
         password: 'testpassword'
       });
     expect(res.statusCode).toEqual(200);
+
+    // Check if a JWT is returned
+    expect(res.body.token).toBeDefined();
+
+    // Optionally, you can decode the token and check if it contains the correct user ID
+    const decodedToken = jwt.verify(res.body.token, process.env.jwtSecret);
+    expect(decodedToken.id).toEqual(user.id);
   });
 
   it('should not login a user with incorrect password', async () => {
@@ -65,7 +74,7 @@ describe('User Controller', () => {
     const hashedPassword = await bcrypt.hash(password, saltRounds);
     const user = new User({ username: 'testuser', password: hashedPassword });
     await user.save();
-
+  
     const res = await request(app)
       .post('/api/user/login')
       .send({
@@ -73,5 +82,8 @@ describe('User Controller', () => {
         password: 'wrongpassword'
       });
     expect(res.statusCode).toEqual(401);
+  
+    // Check if a JWT is not returned
+    expect(res.body.token).toBeUndefined();
   });
 });

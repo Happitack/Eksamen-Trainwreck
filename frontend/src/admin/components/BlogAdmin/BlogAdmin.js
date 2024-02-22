@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getBlog, getBlogs, deleteBlog, updateBlog, createBlog } from '../../../utils/blogAPI'; // import createBlog
+import { getBlog, getBlogs, deleteBlog, updateBlog, createBlog } from '../../../utils/blogAPI'; 
 import './BlogAdmin.css';
 
 function BlogAdmin() {
@@ -53,6 +53,7 @@ function BlogAdmin() {
   return (
     <div className="container">
       <form onSubmit={editingBlog ? handleUpdate : handleCreate} className="form">
+        <h2>{editingBlog ? 'Edit Blog' : 'Create Blog'}</h2>
         <input className="input" name="title" value={form.title} onChange={handleChange} placeholder="Title" required />
         <input className="input" name="author" value={form.author} onChange={handleChange} placeholder="Author" required />
         <textarea className="input" name="summary" value={form.summary} onChange={handleChange} placeholder="Summary" required />
@@ -60,17 +61,20 @@ function BlogAdmin() {
         <input className="input" name="imageName" value={form.imageName} onChange={handleChange} placeholder="Image Name" required />
         <button className="button" type="submit">{editingBlog ? 'Update' : 'Create'}</button>
       </form>
-      {blogs.map((blog) => (
-        <div key={blog._id} className="blogCard">
-          <h2>{blog.title}</h2>
-          <p>{blog.author}</p>
-          <p>{blog.summary}</p>
-          <p>{blog.content}</p>
-          <p>{blog.imageName}</p>
-          <button className="button" onClick={() => handleEdit(blog)}>Edit</button>
-          <button className="button" onClick={() => handleDelete(blog._id)}>Delete</button>
-        </div>
-      ))}
+      <div className="blogsContainer">
+        <h2>Blog:</h2>
+        {blogs.map((blog) => (
+          <div key={blog._id} className="blogCard">
+            <h2>{blog.title}</h2>
+            <p>{blog.author}</p>
+            <p>{blog.summary}</p>
+            <p>{blog.content}</p>
+            <p>{blog.imageName}</p>
+            <button className="button" onClick={() => handleEdit(blog)}>Edit</button>
+            <button className="button" onClick={() => handleDelete(blog._id)}>Delete</button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

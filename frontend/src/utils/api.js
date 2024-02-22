@@ -7,10 +7,39 @@ export async function authenticateUser(username, password) {
       },
       body: JSON.stringify({ username, password }),
     });
-    console.log('Response status:', response.status);
-    return response.ok;
+
+    if (response.ok) {
+      const { token } = await response.json();
+      return token;
+    } else {
+      console.log('Login failed:', response.status);
+      return null;
+    }
   } catch (error) {
     console.error('Network error:', error);
-    return false;
+    return null;
+  }
+}
+
+export async function fetchProtectedData() {
+  const token = localStorage.getItem('token');
+
+  try {
+    const response = await fetch('http://localhost:4000/api/profile', {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      return data;
+    } else {
+      console.log('Request failed:', response.status);
+      return null;
+    }
+  } catch (error) {
+    console.error('Network error:', error);
+    return null;
   }
 }

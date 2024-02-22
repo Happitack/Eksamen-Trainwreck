@@ -67,8 +67,8 @@
   font-family: var(--font-base);
   margin-top: 2rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
 }
 
 .newsletter-input button {

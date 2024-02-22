@@ -53,22 +53,26 @@ function FilmsAdmin() {
   return (
     <div className="container">
       <form onSubmit={editingFilm ? handleUpdate : handleCreate} className="form">
+        <h2>{editingFilm ? 'Edit Film' : 'Create Film'}</h2>
         <input className="input" name="title" value={form.title} onChange={handleChange} placeholder="Title" required />
         <textarea className="input" name="description" value={form.description} onChange={handleChange} placeholder="Description" required />
         <input className="input" name="releaseDate" value={form.releaseDate} onChange={handleChange} placeholder="Release Date" required />
         <input className="input" name="imageName" value={form.imageName} onChange={handleChange} placeholder="Image Name" required />
         <button className="button" type="submit">{editingFilm ? 'Update' : 'Create'}</button>
       </form>
-      {films.map((film) => (
-        <div key={film._id} className="filmCard">
-          <h2>{film.title}</h2>
-          <p>{film.description}</p>
-          <p>{film.releaseDate}</p>
-          <p>{film.imageName}</p>
-          <button className="button" onClick={() => handleEdit(film)}>Edit</button>
-          <button className="button" onClick={() => handleDelete(film._id)}>Delete</button>
+        <div className="filmsContainer">
+          <h2>Film:</h2>
+          {films.map((film) => (
+            <div key={film._id} className="filmCard">
+              <h2>{film.title}</h2>
+              <p>{film.releaseDate}</p>
+              <p>{film.description}</p>
+              <p>{film.imageName}</p>
+              <button className="button" onClick={() => handleEdit(film)}>Edit</button>
+              <button className="button" onClick={() => handleDelete(film._id)}>Delete</button>
+            </div>
+          ))}
         </div>
-      ))}
     </div>
   );
 }

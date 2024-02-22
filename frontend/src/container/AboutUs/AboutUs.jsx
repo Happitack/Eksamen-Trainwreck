@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { getFilms } from '../../utils/filmAPI';
-import { videos} from '../../constants';
+import { videos } from '../../constants';
 import './AboutUs.css';
 
 const { Paranoae, Ostracized, Winter, WhatLiesBeyond, Dolor } = videos;
@@ -34,7 +34,7 @@ const AboutUs = ({ mainComponentRef }) => {
       setNextVideo(videoPath);
     }, 200); // 2000 milliseconds = 2 seconds
   };
-  
+
   useEffect(() => {
     const nextVideoElement = nextVideoRef.current;
     if (nextVideo) {
@@ -57,9 +57,9 @@ const AboutUs = ({ mainComponentRef }) => {
       {nextVideo && <video ref={nextVideoRef} loop muted className="app__bg_anim blur-out" src={nextVideo} style={{ display: 'none' }} />}
 
       <div className="app__aboutus-overlay align-bottom-left section__padding">
-        {films.map((film, index) => (
+        {films.slice(0, 4).map((film, index) => (
           <div key={index} className="app__aboutus_featured-item"
-          onMouseEnter={() => handleMouseEnter(videoMap[film.imageName.toLowerCase()])}>
+            onMouseEnter={() => handleMouseEnter(videoMap[film.imageName.toLowerCase()])}>
             <li className="app__aboutus_featured-item-title">
               <a href={`#${film.title.replace(/\s+/g, '').toLowerCase()}`} title={film.title}>
                 <h1 className="app__aboutus_featured_item_hero-title">

@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 2rem;
+}
+
+.form textarea {
+  height: 20%;
+}
+
+.input {
+  margin: 10px 0;
+  padding: 1rem;
+  border: #ccc 1px solid;
+}
+
+.blogCard {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px 0;
+}
+
+.button {
+  margin: 10px 0;
+  padding: 1rem;
+}
+
+.blogsContainer {
+  width: 50%;
+  padding: 1rem;
+}
+
+.blogsContainer button {
+  margin: 10px;
+}
+
+.blogCard h2,
+.blogCard p {
+  margin: 10px 0;
+}

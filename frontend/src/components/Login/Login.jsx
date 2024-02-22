@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ReactDOM from 'react-dom';
-import { authenticateUser } from '../../utils/api';
+import { authenticateUser, fetchProtectedData } from '../../utils/api';
 import './Login.css';
 
 function Login({ onClose, onLogin }) {
@@ -11,10 +11,15 @@ function Login({ onClose, onLogin }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const isAuthenticated = await authenticateUser(username, password);
-    if (isAuthenticated) {
+    const token = await authenticateUser(username, password);
+    if (token) {
+      localStorage.setItem('token', token);
       onLogin(username);
-      navigate('/admin-dashboard')
+      navigate('/admin-dashboard');
+      
+      // Fetch protected data after successful login
+      const data = await fetchProtectedData();
+      console.log(data);
     } else {
       // handle login failure
     }
