@@ -206,17 +206,14 @@ cursor: pointer;
     width: 30%;
   }
 
-  .navbar-content-links li {
-      font-size: 1.5rem;
+  .navbar-content-menu {
+    width: 25%;
   }
 
   
 }
 
 @media screen and (max-width: 1150px) {
-  .navbar-links {
-      display: none;
-  }
 
   .navbar-logo {
     width: 30%;

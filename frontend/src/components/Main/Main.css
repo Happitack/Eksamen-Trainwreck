@@ -22,7 +22,17 @@
   max-width: 60%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
+
+  .filmContainer {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .filmContainer > .mediaContainer:nth-child(even) img,
+  .filmContainer > .mediaContainer:nth-child(odd) img {
+    display: hidden;
+  }
 
   .filmContainer > .mediaContainer:nth-child(even)
   {
