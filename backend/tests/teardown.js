@@ -1,3 +1,4 @@
+// Used to stop the MongoDB server after the tests are done
 module.exports = async () => {
   try {
     // Try to get the connection string

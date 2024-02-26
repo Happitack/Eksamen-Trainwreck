@@ -7,21 +7,28 @@ import './Login.css';
 function Login({ onClose, onLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const token = await authenticateUser(username, password);
+    // If the server responds with a token, the function saves the token in the local storage and calls the onLogin function with the username as an argument.
     if (token) {
       localStorage.setItem('token', token);
       onLogin(username);
-      navigate('/admin-dashboard');
-      
+    
       // Fetch protected data after successful login
       const data = await fetchProtectedData();
       console.log(data);
+      if (data) {
+        navigate('/admin-dashboard');
+      } else {
+        setErrorMessage("Failed to fetch protected data");
+      }
     } else {
-      // handle login failure
+      // handles login failure
+      setErrorMessage("Login unsuccessful");
     }
   };
 
@@ -45,6 +52,7 @@ function Login({ onClose, onLogin }) {
         <div className="loginButtons">
           <button type="submit">LOGIN</button>
         </div>
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
       </form>
     </div>,
     document.body

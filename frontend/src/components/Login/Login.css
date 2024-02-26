@@ -34,6 +34,12 @@
   color: #fff;
 }
 
+.error-message {
+  color: var(--color-red);
+  font-weight: bold;
+  margin-top: 10px;
+}
+
 .loginButtons
 {
   display: flex;
@@ -83,11 +89,11 @@
 }
 
 .close-button:hover {
-  background-color: #b3000f;
+  background-color: var(--color-red);
   color: #ffffff;
 }
 
 .login-form button:hover {
-  background-color: #b3000f;
+  background-color: var(--color-red);
   color: #ffffff;
 }

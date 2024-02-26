@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { getFilms, createFilm, updateFilm, deleteFilm } from '../../../utils/filmAPI';
 import './FilmsAdmin.css';
 
+  // The FilmsAdmin component is a form that allows the user to create, edit, and delete films. The component uses the useState hook to store the films, form, and editingFilm. The component uses the useEffect hook to fetch the films from the server when the component is mounted. The component uses the getFilms, createFilm, updateFilm, and deleteFilm functions from the filmAPI module to interact with the server. The component renders a form with input fields for the title, description, release date, and image name, and a submit button. The component also renders a list of films with buttons to edit and delete each film. The component uses the handleCreate, handleUpdate, handleDelete, handleEdit, and handleChange functions to handle form submission, editing, and deletion.
+
 function FilmsAdmin() {
   const [films, setFilms] = useState([]);
   const [form, setForm] = useState({ title: '', description: '', releaseDate: '', imageName: '' });
@@ -49,6 +51,9 @@ function FilmsAdmin() {
       setEditingFilm(updatedForm);
     }
   };
+
+
+
 
   return (
     <div className="container">
