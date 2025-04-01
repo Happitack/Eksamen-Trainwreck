@@ -1,5 +1,0 @@
-cainrae GBnYKWR2Q4bN68mw
-
-mongodb://localhost:27017
-
-TWadmin OCAC3845a
